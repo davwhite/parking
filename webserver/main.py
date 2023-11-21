@@ -7,11 +7,12 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 lot_info = {
-    "lot_name": "Joe's Smart Discount Parking",
+    "lot_name": "Joe's Cert Shop Parking",
     "available_spaces": 10,
     "price_per_hour": 5.0,
     "early_bird_discount": 2.0,
     "lot_status": "Lot Open",  # Add lot status
+    "reservations": 5  # Add reservations
 }
 
 @app.get("/", response_class=HTMLResponse)

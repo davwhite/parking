@@ -30,10 +30,12 @@
             padding: 2em;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap; /* Added for responsive layout */
         }
 
         .column {
-            width: 48%;
+            width: 30%; /* Adjusted width for three columns */
+            margin-bottom: 1em; /* Added spacing between columns */
         }
 
         h2 {
@@ -90,6 +92,13 @@
                 <p class="discount">Early Bird Discount: ${{ parking_info.early_bird_discount }} (6 AM - 9 AM)</p>
             </section>
         </div>
+
+        <div class="column">
+            <section>
+                <h2>Current Status</h2>
+                <p class="status">{{ parking_info.lot_status }}</p>
+            </section>
+        </div>
     </div>
 
     <div class="section-container">
@@ -111,8 +120,15 @@
 
         <div class="column">
             <section>
-                <h2>Current Status</h2>
-                <p class="status">{{ parking_info.lot_status }}</p>
+                <h2>Reservations</h2>
+                <p>{{ parking_info.reservations }} reservations</p>
+            </section>
+        </div>
+
+        <div class="column">
+            <section>
+                <h2>Camera View</h2>
+                <!-- Add camera view content as needed -->
             </section>
         </div>
     </div>

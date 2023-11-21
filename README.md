@@ -16,7 +16,7 @@ This is a simple FastAPI application that provides information about a parking l
     ```
 3. Run the FastAPI application:
     ```
-    uvicorn parking:app --reload
+    uvicorn main:app --reload
     ```
 
 4. Open your web browser and go to http://127.0.0.1:8000 to view the parking lot information.
