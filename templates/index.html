@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ parking_info.lot_name }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .section-container {
+            margin: 2em;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 2em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            width: 48%;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5em;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .discount {
+            color: #e44d26;
+            font-weight: bold;
+        }
+
+        .status {
+            color: #007bff; /* Blue */
+        }
+
+        .parking-space-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .parking-space {
+            width: 40px;
+            height: 20px;
+            background-color: #4caf50; /* Green */
+            border: 1px solid #333;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ parking_info.lot_name }}</h1>
+    </header>
+
+    <div class="section-container">
+        <div class="column">
+            <section>
+                <h2>Available Spaces</h2>
+                <p>{{ parking_info.available_spaces }} spaces</p>
+            </section>
+        </div>
+
+        <div class="column">
+            <section>
+                <h2>Parking Rates</h2>
+                <p>Price per Hour: ${{ parking_info.price_per_hour }}</p>
+                <p class="discount">Early Bird Discount: ${{ parking_info.early_bird_discount }} (6 AM - 9 AM)</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="column">
+            <section>
+                <h2>Parking Spaces</h2>
+                <div class="parking-space-container">
+                    {% for _ in range(parking_info.available_spaces // 2) %}
+                        <div class="parking-space"></div>
+                    {% endfor %}
+                </div>
+                <div class="parking-space-container">
+                    {% for _ in range(parking_info.available_spaces // 2) %}
+                        <div class="parking-space"></div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+
+        <div class="column">
+            <section>
+                <h2>Current Status</h2>
+                <p class="status">{{ parking_info.lot_status }}</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
