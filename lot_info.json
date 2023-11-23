@@ -1,5 +1,6 @@
 {
     "lot_name": "Joe's Cert Shop Parking",
+    "total_spaces": 10,
     "available_spaces": 10,
     "price_per_hour": 5.0,
     "early_bird_discount": 2.0,
