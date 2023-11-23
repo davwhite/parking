@@ -1,18 +1,35 @@
-# Parking Lot Information App
+# Parking Lot Simulation
 
-This is a simple FastAPI application that provides information about a parking lot, including available spaces, parking rates, and current status. It also displays parking spaces visually using rectangles.
+This repository demonstrates the application of a computer vision model to a parking lot simulation and its integration with event-based actions and business logic.
 
-## Usage
+## Overview
+
+The parking lot simulation utilizes computer vision to monitor and analyze parking spaces, providing insights into the availability of parking spots, pricing per hour, and early bird discounts.
+
+## Features
+
+- Real-time parking space availability detection
+- Pricing per hour for parking
+- Early bird discount feature
+- Integration with event-based actions and business logic
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+- Dependencies (listed in requirements.txt)
+
+### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/parking-app.git
-   cd parking-app
-    ```
+   git clone https://github.com/davwhite/parking.git
+
 2. Install the required dependencies
     ```
-    pip install fastapi[all]
+    pip install requirements.txt
     ```
 3. Run the FastAPI application:
     ```
